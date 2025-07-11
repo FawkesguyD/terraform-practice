@@ -1,0 +1,8 @@
+.env
+terraform.tfvars
+secrets/*
+authorized_key.json
+.terraform.lock.hcl
+.terraform
+
+user-data.yaml
