@@ -12,7 +12,12 @@ variable "vms" {
     subnet_label  = string
     subnet_id     = string
     nat           = bool 
+    ip_address    = string
   }))
+}
+
+variable "security_group_ids" {
+  type = list(string)
 }
 
 variable "ssh_pubkey" {

@@ -28,6 +28,8 @@ module "instance" {
 
     vms            = local.vms
 
+    security_group_ids = [data.terraform_remote_state.network.outputs.security_group_id]
+
     ssh_pubkey     = var.ssh_pubkey
     ssh_user       = var.ssh_user
 

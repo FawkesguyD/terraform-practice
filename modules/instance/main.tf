@@ -20,20 +20,18 @@ resource "yandex_compute_instance" "this" {
   }
 
   network_interface {
-    subnet_id = each.value.subnet_id
-    nat       = each.value.nat
+    subnet_id          = each.value.subnet_id
+    nat                = each.value.nat
+    ip_address         = each.value.ip_address
+    security_group_ids = var.security_group_ids
   }
 
   metadata = {
-
     ssh-keys  = "${var.ssh_user}:${var.ssh_pubkey}"
     user-data = "${file("${path.module}/cloud-init/user-data.yaml")}"
   }
 }
 
-locals {
-
-}
 resource "yandex_dns_recordset" "internal" {
   for_each = {
     for name, vm in yandex_compute_instance.this :

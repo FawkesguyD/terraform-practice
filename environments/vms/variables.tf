@@ -27,8 +27,10 @@ variable "vms" {
     disk_size     = number
     subnet_label  = string
     nat           = bool 
+    ip_address    = string
   }))
 }
+
 
 # SSH
 variable "ssh_pubkey" {}
