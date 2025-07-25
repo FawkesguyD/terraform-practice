@@ -1,18 +1,19 @@
 variable "vms" {
   type = list(object({
-    name          = string
-    platform_id   = string
-    zone          = string
-    cores         = number
-    memory        = number
-    core_fraction = number
-    image_id      = string 
-    disk_type     = string
-    disk_size     = number
-    subnet_label  = string
-    subnet_id     = string
-    nat           = bool 
-    ip_address    = string
+    name                      = string
+    platform_id               = string
+    zone                      = string
+    cores                     = number
+    memory                    = number
+    core_fraction             = number
+    image_id                  = string 
+    disk_type                 = string
+    disk_size                 = number
+    subnet_label              = string
+    subnet_id                 = string
+    nat                       = bool 
+    ip_address                = string
+    allow_stopping_for_update = bool
   }))
 }
 

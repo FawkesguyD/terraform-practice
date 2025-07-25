@@ -12,3 +12,4 @@ module "network" {
    dns_description              = var.dns_description
    dns_zone                     = var.dns_zone
 }
+

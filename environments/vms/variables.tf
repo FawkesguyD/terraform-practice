@@ -16,18 +16,19 @@ variable "folder_id" {
 
 variable "vms" {
   type = list(object({
-    name          = string
-    platform_id   = string
-    zone          = string
-    cores         = number
-    memory        = number
-    core_fraction = number
-    image_id      = string 
-    disk_type     = string
-    disk_size     = number
-    subnet_label  = string
-    nat           = bool 
-    ip_address    = string
+    name                      = string
+    platform_id               = string
+    zone                      = string
+    cores                     = number
+    memory                    = number
+    core_fraction             = number
+    image_id                  = string 
+    disk_type                 = string
+    disk_size                 = number
+    subnet_label              = string
+    nat                       = bool 
+    ip_address                = string
+    allow_stopping_for_update = bool
   }))
 }
 
@@ -42,3 +43,23 @@ variable "subdomain_type" {
 variable "subdomain_ttl" {
   default = 600
 }
+
+# TIMEWEB ---------------------
+# settings
+variable "twc_token_auth" {}
+# settings
+#
+# OTHER:
+#variable "twc_dns_records" {
+#    type = list(object({
+#        name  = string
+#        value = string
+#    })) 
+#    default = [ {
+#      name = "github."
+#    },
+#    {
+#        name = "registry."
+#    }]
+#
+#}

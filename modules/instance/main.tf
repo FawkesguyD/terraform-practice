@@ -30,6 +30,7 @@ resource "yandex_compute_instance" "this" {
     ssh-keys  = "${var.ssh_user}:${var.ssh_pubkey}"
     user-data = "${file("${path.module}/cloud-init/user-data.yaml")}"
   }
+  allow_stopping_for_update = each.value.allow_stopping_for_update
 }
 
 resource "yandex_dns_recordset" "internal" {

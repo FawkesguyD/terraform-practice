@@ -22,7 +22,6 @@ resource "yandex_vpc_security_group" "this" {
 
   dynamic "egress" {
     for_each = { for group in var.sec_group_egress : group.description => group }
-
     content { 
       protocol       = egress.value.protocol
       description    = egress.key

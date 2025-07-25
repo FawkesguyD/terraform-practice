@@ -30,3 +30,10 @@ variable "subnets" {
 variable "dns_name" {}
 variable "dns_description" {}
 variable "dns_zone" {}
+
+
+
+
+
+
+

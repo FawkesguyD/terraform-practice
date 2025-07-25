@@ -89,7 +89,23 @@ variable "sec_group_discribe" {
         to_port        = 65535
         protocol       = "ANY"
         v4_cidr_blocks = [ "172.16.10.0/24" ]
-    }]
+    },
+
+    {
+      description = "gitlab_ssh"
+      from_port = 2222
+      protocol = "TCP"
+      to_port = 2222
+      v4_cidr_blocks = [ "0.0.0.0/0" ]
+    },
+    {
+      description = "gitlab_registry"
+      from_port = 5000
+      protocol = "TCP"
+      to_port = 5000
+      v4_cidr_blocks = [ "0.0.0.0/0" ]
+    }
+    ]
  }
 
 variable "sec_group_egress" { 

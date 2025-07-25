@@ -21,6 +21,12 @@ locals {
             subnet_id = data.terraform_remote_state.network.outputs.subnet_ids[vm.subnet_label]
         })
     ]
+
+    #twc_dns_records = [
+    #    for record in var.var.twc_dns_records : merge(record, {
+    #        value = module.instance.nat_ip_addresses != "" ? module.instance.nat_ip_addresses : ""
+    #    })
+    #]
 }
 
 module "instance" {
@@ -37,3 +43,9 @@ module "instance" {
     subdomain_type = var.subdomain_type
     subdomain_ttl  = var.subdomain_ttl
 }
+
+#module "extended_dns_service" {
+#    source = "./../../modules/extended_dns_service"
+#
+#    twc_dns_records = var.twc_dns_records
+#}
